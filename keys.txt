@@ -1,0 +1,2 @@
+API_KEY= your mailgun api key
+DOMAIN= your mailgun domain

@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+  <form id="contact-form" method="POST" action="/submitForm">
+   
+    <input type="text" id="name" name="name" placeholder="Your Name..." required>
+    <input type="email" id="email" name="email" placeholder="Email Address..." required>
+    <textarea name="message" id="message" placeholder="Your Message..." required></textarea>
+    
+    <button class="g-recaptcha" data-sitekey="6Ldi36wdAAAAAKQt6ZRvz41BJw-wf1p_vo_kP0ER"
+      data-callback="sendEmailRequest">Send</button>
+    
+    <div class="output-message">
+      <% if(typeof success != "undefined" && success) { %>
+        <div class="success">
+          <p> <%= message %> </p>
+        </div>
+      <% } else if (typeof success != "undefined" && !success) { %>
+        <div class="error">
+          <p> <%= message %> </p>
+        </div>
+      <% } %>
+    </div>
+
+  </form>
+
+  <script src="/js/script.js"></script>
+
+<%- include("partials/header.ejs") %>
